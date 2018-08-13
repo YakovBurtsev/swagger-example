@@ -12,6 +12,7 @@ package com.yakovburtsev.swagger.example.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
+import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
@@ -25,11 +26,12 @@ public class SwaggerConfiguration {
     @Bean
     public Docket newsApi() {
         return new Docket(DocumentationType.SWAGGER_2)
-                .groupName("swagger-example")
-                .apiInfo(apiInfo())
                 .select()
-                .paths(regex(".*/controller/.*"))
-                .build();
+                .apis(RequestHandlerSelectors.any())
+                .paths(regex(".*/swagger-example/.*"))
+                .build()
+                .useDefaultResponseMessages(false)
+                .apiInfo(apiInfo());
     }
 
     private ApiInfo apiInfo() {
