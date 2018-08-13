@@ -9,7 +9,7 @@
  */
 package com.yakovburtsev.swagger.example.entity;
 
-public enum  Sex {
+public enum Sex {
     MALE,
     FEMALE
 }

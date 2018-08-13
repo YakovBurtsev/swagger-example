@@ -20,31 +20,40 @@ import java.io.Serializable;
 public class User implements Serializable {
     @Id
     @GeneratedValue
-    private final long id;
-    private final String name;
-    private final int age;
-    private final Sex sex;
+    private Long id;
+    private String name;
+    private Integer age;
+    private Sex sex;
 
-    public User(long id, String name, int age, Sex sex) {
-        this.id = id;
-        this.name = name;
-        this.age = age;
-        this.sex = sex;
+    public Long getId() {
+        return id;
     }
 
-    public long getId() {
-        return id;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
         return name;
     }
 
-    public int getAge() {
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getAge() {
         return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
     public Sex getSex() {
         return sex;
+    }
+
+    public void setSex(Sex sex) {
+        this.sex = sex;
     }
 }

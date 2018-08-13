@@ -9,8 +9,8 @@
  */
 package com.yakovburtsev.swagger.example.controller;
 
-import com.yakovburtsev.swagger.example.service.UserService;
 import com.yakovburtsev.swagger.example.entity.User;
+import com.yakovburtsev.swagger.example.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -35,9 +35,9 @@ public class UserController {
 
     @ApiOperation(value = "Create user", notes = "method to create a new user")
     @ApiImplicitParams(value = {
-            @ApiImplicitParam(value = "Name", name = "user name", dataType = "string", paramType = "query"),
-            @ApiImplicitParam(value = "Age", name = "user age", dataType = "int", paramType = "query"),
-            @ApiImplicitParam(value = "Sex", name = "user sex", dataType = "enum", allowableValues = "MALE, FEMALE", paramType = "query")
+            @ApiImplicitParam(value = "Name", name = "name", dataType = "string", paramType = "query"),
+            @ApiImplicitParam(value = "Age", name = "age", dataType = "int", paramType = "query"),
+            @ApiImplicitParam(value = "Sex", name = "sex", dataType = "enum", allowableValues = "MALE, FEMALE", paramType = "query")
     })
     @PostMapping(value = "/create")
     @ResponseBody
